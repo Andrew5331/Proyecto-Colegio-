@@ -5,21 +5,19 @@ import java.awt.*;
 
 public class Notas extends JFrame {
     public Notas() {
-        // Configuración básica de la ventana
+ 
         setSize(1000, 700);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
         setLayout(new BorderLayout());
         getContentPane().setBackground(Color.WHITE);
 
-        // ---------------------------
-        // Panel lateral izquierdo (igual que tu original)
-        // ---------------------------
+   
         JPanel panelIzquierdo = new JPanel(new BorderLayout());
         panelIzquierdo.setPreferredSize(new Dimension(200, getHeight()));
         panelIzquierdo.setBackground(Color.WHITE);
 
-        // Panel de usuario
+
         JPanel panelUsuario = new JPanel(new GridLayout(2, 1));
         panelUsuario.setBackground(Color.WHITE);
         panelUsuario.setBorder(BorderFactory.createEmptyBorder(10, 10, 10, 10));
@@ -32,7 +30,7 @@ public class Notas extends JFrame {
         panelUsuario.add(lblUsuario);
         panelUsuario.add(lblRol);
 
-        // Panel Menu con botones
+     
         JPanel panelMenu = new JPanel(new GridLayout(5, 1, 5, 5));
         panelMenu.setBackground(Color.WHITE);
 
@@ -42,7 +40,7 @@ public class Notas extends JFrame {
         JButton btnComunicados = new JButton("Comunicados");
         JButton btnObservador = new JButton("Observador");
 
-        // Colores: Asignaturas resaltado (como en tu original)
+     
         btnInicio.setBackground(Color.WHITE);
         btnAsignaturas.setBackground(new Color(173, 216, 230)); // Azul claro
         btnCalendario.setBackground(Color.WHITE);
@@ -55,7 +53,7 @@ public class Notas extends JFrame {
         panelMenu.add(btnComunicados);
         panelMenu.add(btnObservador);
 
-        // Panel de opciones (abajo)
+
         JPanel panelOpciones = new JPanel(new GridLayout(2, 1, 5, 5));
         panelOpciones.setBackground(Color.WHITE);
         panelOpciones.setBorder(BorderFactory.createEmptyBorder(100, 10, 10, 10));
@@ -66,25 +64,23 @@ public class Notas extends JFrame {
         panelOpciones.add(btnConfig);
         panelOpciones.add(btnCerrar);
 
-        // Armar panel izquierdo
+       
         panelIzquierdo.add(panelUsuario, BorderLayout.NORTH);
         panelIzquierdo.add(panelMenu, BorderLayout.CENTER);
         panelIzquierdo.add(panelOpciones, BorderLayout.SOUTH);
 
         add(panelIzquierdo, BorderLayout.WEST);
 
-        // ---------------------------
-        // Panel central (con pestañas, filtros y tabla)
-        // ---------------------------
+   
         JPanel panelCentral = new JPanel(new BorderLayout(15, 15));
         panelCentral.setBackground(Color.WHITE);
         panelCentral.setBorder(BorderFactory.createEmptyBorder(20, 20, 20, 20));
 
-        // Panel superior compuesto: pestañas + botones Curso/Periodo centrados debajo
+      
         JPanel panelSuperiorComp = new JPanel(new BorderLayout());
         panelSuperiorComp.setBackground(Color.WHITE);
 
-        // Barra de pestañas (Clases | Notas | Asistencias)
+   
         JPanel barraSuperior = new JPanel(new FlowLayout(FlowLayout.CENTER, 50, 5));
         barraSuperior.setBackground(Color.WHITE);
 
@@ -100,14 +96,13 @@ public class Notas extends JFrame {
         barraSuperior.add(lblNotas);
         barraSuperior.add(lblAsistencias);
 
-        // Panel con botones "Curso" y "Periodo" centrados bajo las pestañas
+    
         JPanel panelFiltros = new JPanel(new FlowLayout(FlowLayout.CENTER, 20, 8));
         panelFiltros.setBackground(Color.WHITE);
 
         JButton btnCurso = new JButton("Curso");
         JButton btnPeriodo = new JButton("Periodo");
 
-        // estilo similar a los botones blancos (borde claro)
         JButton[] filtros = {btnCurso, btnPeriodo};
         for (JButton b : filtros) {
             b.setBackground(Color.WHITE);
